@@ -12,7 +12,7 @@ q_rx = re.compile(r"""
   # number of the question
   (?P<number>\d+)\)
   # Question being asked
-  (?P<prompt>.+\?)
+  (?P<prompt>.+)
   # Possible answers to the question
   (?P<answers>(?:\s+[-\*]\s.+)+)
   # image to include in response
@@ -54,10 +54,12 @@ def toJson(filename):
     title = title.group(1).strip()
 
   # remove comments from quiz file
-  # quiz_text = re.sub(r'//(.+)', "", quiz_text)
+  quiz_text = re.sub(r'//(.+)', "", quiz_text)
 
   # find all questions
   questions = [m.groupdict() for m in q_rx.finditer(quiz_text)]
+
+  print(questions)
 
   results = []
 
@@ -81,6 +83,8 @@ def toJson(filename):
       out['correct']['text'] = q['text'].strip()
 
     answers = [m.groupdict() for m in answ_rx.finditer(q['answers'])]
+    
+    print(answers)
 
     out['answers'] = []
     for i, a in enumerate(answers):

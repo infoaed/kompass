@@ -31,6 +31,7 @@ function render(quiz_opts) {
   // keep track of the state of correct
   // answers to the quiz so far
   var state = {
+    answers : [],
     correct : 0,
     total : questions.length
   };
@@ -82,7 +83,7 @@ var $indicators = $('<ol>')
 
   $("<button>")
     .attr('class', 'quiz-button btn')
-    .text("Take the quiz!")
+    .text("Hakkame pihta!")
     .click(function() {
       $quiz.carousel('next');
       $indicators.addClass('show');
@@ -165,7 +166,7 @@ var $indicators = $('<ol>')
       var opts = {
         allowOutsideClick : false,
         allowEscapeKey : false,
-        confirmButtonText: "Next Question",
+        confirmButtonText: "Järgmine küsimus",
         html : true,
         confirmButtonColor: "#0096D2"
       };
@@ -174,8 +175,8 @@ var $indicators = $('<ol>')
       // answer dialogue
       if (correct) {
         opts = $.extend(opts, {
-          title: "Nice!",
-          text: "Well done" + (
+          title: "Väga hea!",
+          text: "Asjatundjate enamus on sinuga samal seisukohal." + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
               question.correct.text +
@@ -185,10 +186,10 @@ var $indicators = $('<ol>')
         });
       } else {
         opts = $.extend(opts, {
-          title: "Drat",
+          title: "Oi-oi!",
           text: (
-            "Nope, not quite right!<br/><br/>" +
-            "The correct answer was \"" +
+            "See läks nüüd vähe mööda!<br/><br/>" +
+            "Võidugraafikus oleks sind hoidnud \"" +
             question.answers[question.correct.index] + "\"." + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
@@ -201,27 +202,31 @@ var $indicators = $('<ol>')
       }
 
       if (last_question) {
-        opts.confirmButtonText = "See your results";
+        opts.confirmButtonText = "Vaata tulemusi!";
       }
-
+      
+      
       // bind click event to answer button,
       // using specified sweet alert options
       ans_btn.on('click', function() {
 
-        function next() {
+        //function next() {
           // if correct answer is selected,
           // keep track in total
           if (correct) state.correct++;
+          state.answers[question_index] = answer_index;
+
           $quiz.carousel('next');
 
           // if we've reached the final question
           // set the results text
           if (last_question) {
+            console.log(state.answers);
             $results_title.html(resultsText(state));
             $results_ratio.text(
-              "You got " +
+              "Vastasid " +
               Math.round(100*(state.correct/state.total)) +
-              "% of the questions correct!"
+              "% küsimustest õigesti!"
             );
             $twitter_link.attr('href', tweet(state, quiz_opts));
             $facebook_link.attr('href', facebook(state, quiz_opts));
@@ -239,13 +244,13 @@ var $indicators = $('<ol>')
               .addClass('dark');
           }
           // unbind event handler
-          $('.sweet-overlay').off('click', next);
-        }
+          //$('.sweet-overlay').off('click', next);
+        //}
 
         // advance to next question on OK click or
         // click of overlay
-        swal(opts, next);
-        $('.sweet-overlay').on('click', next);
+        //swal(opts, next);
+        //$('.sweet-overlay').on('click', next);
 
       });
 
@@ -253,7 +258,6 @@ var $indicators = $('<ol>')
 
 
   });
-
 
   // final results slide
   var $results_slide = $("<div>")
@@ -275,7 +279,7 @@ var $indicators = $('<ol>')
 
   var $social = $("<div>")
     .attr('class', 'results-social')
-    .html('<div id = "social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!</div>')
+    .html('<div id = "social-text">Tunned, et meie kompassist oli sulle kasu? Jaga siis väärt infot sõpradega!</div>')
     .appendTo($results_slide);
 
   var $twitter_link = $('<a>')
@@ -288,7 +292,7 @@ var $indicators = $('<ol>')
 
   $("<button>")
     .attr('class', 'quiz-button btn')
-    .text("Try again?")
+    .text("Proovi uuesti!")
     .click(function() {
       state.correct = 0;
       $quiz.carousel(0);
@@ -313,22 +317,22 @@ function resultsText(state) {
 
   switch (true) {
     case (ratio === 1):
-      text = "Wow&mdash;perfect score!";
+      text = "Ajee, mida tulemust!";
       break;
     case (ratio > 0.9):
-      text = "Awesome job, you got most of them right.";
+      text = "Suurepärane, sa panid peaaegu kõik täkkesse!";
       break;
     case (ratio > 0.60):
-      text = "Pretty good, we'll say that's a pass.";
+      text = "Päris hea, aga treeni veidi veel!";
       break;
     case (ratio > 0.5):
-      text = "Well, at least you got half of them right&hellip;";
+      text = "Üle poolte läksid täppi, lootust on!&hellip;";
       break;
     case (ratio < 0.5 && ratio !== 0):
-      text = "Looks like this was a tough one, better luck next time.";
+      text = "Päris karm, mis? Tee väike paus ja mine uuele ringile!";
       break;
     case (ratio === 0):
-      text = "Yikes, none correct. Well, maybe it was rigged?";
+      text = "Mitte ühtegi õiget &mdash; süsteemis on kallutatud jõud?";
       break;
   }
   return text;
@@ -339,10 +343,7 @@ function resultsText(state) {
 function tweet(state, opts) {
 
   var body = (
-    "I got " + state.correct +
-    " out of " + state.total +
-    " on @taxpolicycenter’s \"" + opts.title +
-    "\" quiz. Test your knowledge here: " + opts.url
+    "Ei tea, keda valida? Vaata, mida soovitab sulle valimiskompass, mille on koostanud @halbkodanik koostöös sõltumatu poliitikauuringute instituudiga! " + opts.url + " #valimised #rk2019"
   );
 
   return (

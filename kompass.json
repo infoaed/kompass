@@ -1,0 +1,50 @@
+{
+  "questions": [
+    {
+      "answers": [
+        "Korruptsioonivaba",
+        "Rahast s\u00f5ltumatu",
+        "Erakondlike liivkastim\u00e4ngudeta",
+        "V\u00e4\u00e4rtusp\u00f5hine",
+        "K\u00f5ik on v\u00e4ga h\u00e4sti!"
+      ],
+      "correct": {
+        "index": 4,
+        "text": "\u00dcks-kaks-kolm!"
+      },
+      "number": 1,
+      "prompt": "Minu soov on, et poliitika oleks..."
+    },
+    {
+      "answers": [
+        "Edgar Savisaare p\u00e4randiga on arved \u00f5iendatud",
+        "Siim Kallase pangaarved on rekvireeritud",
+        "Mart Laar on tunnistatud v\u00e4eteenistuseks k\u00f5lbmatuks",
+        "Daniel Vaarik on v\u00f5tnud vastutuse Eesti poliitika tuksikeeramise eest"
+      ],
+      "correct": {
+        "index": 3,
+        "text": "No see suurkogu projekt oli tegelt ikka s\u00fcdametu ilkumine, loodetavasti"
+      },
+      "number": 2,
+      "prompt": "Me ei saa enne edasi minna, kui..."
+    },
+    {
+      "answers": [
+        "Alati \u00f5igustatud",
+        "Mitte kunagi \u00f5igustatud",
+        "T\u00f5de on kusagil vahepeal",
+        "Kas ma saaksin vihje?",
+        "Laske klounid lavale!"
+      ],
+      "correct": {
+        "index": 4,
+        "text": "Sa oled t\u00f5eline poliitikaguru, tibuke!"
+      },
+      "number": 3,
+      "prompt": "J\u00f5uv\u00f5tted ja populism on poliitikas..."
+    }
+  ],
+  "title": "Vasta neile k\u00fcsimustele ja meie kompass aitab Sul navigeerida Riigikogu valimistel!",
+  "url": "http://kompass.infoaed.ee/"
+}

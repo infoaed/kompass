@@ -94,10 +94,10 @@ html, body {
 }
 
 .quiz-title {
-  font-size: 60px;
+  font-size: 3.5em;
   font-weight: 300;
   margin-top: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .results-ratio {
@@ -176,13 +176,10 @@ html, body {
  background-position: 0 -1433px;
 }
 
-
-
 .sweet-alert {
       margin-top: -251px !important;
       position: absolute;
   }
-
 
 @media (max-width: 540px){
 .quiz-question{
