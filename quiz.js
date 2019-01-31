@@ -7,6 +7,7 @@
 
 // keep track of number of quizes added to page
 var quiz_count = 0;
+var iter = 0;
 
 // add jQuery selection method to create
 // quiz structure from question json file
@@ -216,18 +217,20 @@ var $indicators = $('<ol>')
           if (correct) state.correct++;
           state.answers[question_index] = answer_index;
 
+          iter = 0;
           $quiz.carousel('next');
 
           // if we've reached the final question
           // set the results text
           if (last_question) {
             console.log(state.answers);
-            $results_title.html(resultsText(state));
+
+            /*$results_title.html(resultsText(state));
             $results_ratio.text(
               "Vastasid " +
               Math.round(100*(state.correct/state.total)) +
               "% küsimustest õigesti!"
-            );
+            );*/
             $twitter_link.attr('href', tweet(state, quiz_opts));
             $facebook_link.attr('href', facebook(state, quiz_opts));
             $indicators.removeClass('show');
@@ -236,6 +239,7 @@ var $indicators = $('<ol>')
               .removeClass('dark')
               .eq(0)
               .addClass('dark');
+ 
           } else {
             // indicate the question number
             $indicators.find('li')
@@ -265,12 +269,17 @@ var $indicators = $('<ol>')
     .attr("height", height + "px")
     .appendTo($slides);
 
-  var $results_title = $('<h1>')
+  /*var $results_title = $('<h1>')
     .attr('class', 'quiz-title')
-    .appendTo($results_slide);
+    .appendTo($results_slide);*/
 
+  var $canvas = $('<div>')
+    .attr('id', 'canvas')
+    .appendTo($results_slide);
+    
   var $results_ratio = $('<div>')
     .attr('class', 'results-ratio')
+    .attr('id', 'res-text')
     .appendTo($results_slide);
 
   var $restart_button = $("<div>")
@@ -307,6 +316,8 @@ var $indicators = $('<ol>')
     $quiz.find(".item")
       .attr('height', $quiz.height() + "px");
   });
+
+  result_viz();
 
 }
 
@@ -355,6 +366,99 @@ function tweet(state, opts) {
 
 function facebook(state, opts) {
   return "https://www.facebook.com/sharer/sharer.php?u=" + opts.url;
+}
+
+function result_viz() {
+    var width = 400, height = 360, centerGap = 15, n = 20;
+    var getRandomInt = function(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    var generateDataset = function(n, inner, outer) {
+        var ls = [];
+        for (var i = 0; i < n; i++) {
+            ls.push({
+                'inner': inner,
+                'outer': getRandomInt(outer - 60, outer)
+            });
+        }
+        return ls;
+    }
+    var colorRand = getRandomInt(0,3);
+    if (colorRand==0) {
+        var color = d3.scale.category20();
+    } else if (colorRand==1) {
+        var color = d3.scale.category20b();
+    } else if (colorRand==2) {
+        var color = d3.scale.category20c();
+    }
+
+    var dataset = generateDataset(n, centerGap, Math.min(width, height) / 2);
+    var svg = d3.select("#canvas").append("svg").attr("width", width).attr("height", height);
+    var arc = d3.svg.arc()
+                    .innerRadius(function(d) {
+                        return d.data.inner;
+                    })
+                    .outerRadius(function(d) {
+                        return d.data.outer;
+                    });
+
+    var pie = d3.layout.pie()
+                       .value(function(d) { return getRandomInt(10, 15); })
+                       .sort(null);
+
+    var randArc = d3.svg.arc()
+                        .innerRadius(function(d) {
+                            return d.data.inner;
+                        })
+                        .outerRadius(function(d) {
+                            return getRandomInt(100, Math.min(width, height) / 2);
+                        });
+
+    var randomRotate = function() {
+        var curAngle = getRandomInt(0,360);
+        var rand = getRandomInt(0, 7);
+        var easeFunc = 'cubic-in-out';
+        if (rand == 0) {
+            easeFunc = 'linear';
+        } else if (rand == 1) {
+            easeFunc = 'quad';
+        } else if (rand == 2) {
+            easeFunc = 'back';
+        } else if (rand == 3) {
+            easeFunc = 'elastic';
+        } else if (rand == 4) {
+            easeFunc = 'bounce';
+        }
+        svg.selectAll('path').transition()
+                             .attr("d", function(d) {
+                                 return randArc(d);
+                             })
+                             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ") rotate(" + curAngle + "," + 0 + "," + 0 + ")")
+                             .duration(300)
+                             .ease(easeFunc);
+
+        $("#res-text").html(["Meie andmed näitavad, et", "Sa oled liiga arukas", "et minna valima", "aga", "kui Sa muidu ei saa, siis", "vali mõni erakondadest", "mida teised kompassid", "õigustamatult eiravad", "&nbsp;", "Eestimaa Rohelised", "Elurikkuse Erakond", "Ühendatud Vasakpartei", "Vabaerakond", "mõni üksikkandidaat?", "&nbsp;"][iter++%15]);
+    }
+
+    svg.selectAll('path')
+       .data(pie(dataset))
+       .enter()
+       .append('path')
+       .attr('d', function(d) {
+           return arc(d);
+       })
+       .attr("stroke-width", 2)
+       .attr("stroke", "black")
+       .style("stroke-opacity", .3)
+       .style("stroke-linejoin", "round")
+       .attr('fill', function(d, i) {
+           return color(i);
+       })
+       .style("opacity", .9)
+       .attr('class', 'pie')
+       .attr('transform', 'translate(250, 250)');
+       
+    setInterval(randomRotate, 1800);
 }
 
 

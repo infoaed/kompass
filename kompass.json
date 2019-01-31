@@ -2,14 +2,13 @@
   "questions": [
     {
       "answers": [
-        "Korruptsioonivaba",
+        "Eesti elu edendav",
+        "V\u00e4\u00e4rtusp\u00f5hine",
         "Rahast s\u00f5ltumatu",
         "Erakondlike liivkastim\u00e4ngudeta",
-        "V\u00e4\u00e4rtusp\u00f5hine",
-        "K\u00f5ik on v\u00e4ga h\u00e4sti!"
+        "Kodanike vahetut osalust v\u00f5imaldav"
       ],
       "correct": {
-        "index": 4,
         "text": "\u00dcks-kaks-kolm!"
       },
       "number": 1,
@@ -17,32 +16,31 @@
     },
     {
       "answers": [
-        "Edgar Savisaare p\u00e4randiga on arved \u00f5iendatud",
-        "Siim Kallase pangaarved on rekvireeritud",
-        "Mart Laar on tunnistatud v\u00e4eteenistuseks k\u00f5lbmatuks",
-        "Daniel Vaarik on v\u00f5tnud vastutuse Eesti poliitika tuksikeeramise eest"
+        "Immigratsioon ja r\u00e4ndelepe",
+        "T\u00f5ej\u00e4rgsus ja populismi vohamine",
+        "Seksuaalv\u00e4hemuste \u00f5igused ja uued peremudelid",
+        "Usaldamatus poliitilise eliidi vastu",
+        "Eesti metsade ja keskkonna s\u00e4ilimine"
       ],
       "correct": {
-        "index": 3,
-        "text": "No see suurkogu projekt oli tegelt ikka s\u00fcdametu ilkumine, loodetavasti"
+        "text": "K\u00f5ik on v\u00e4ga h\u00e4sti!"
       },
       "number": 2,
-      "prompt": "Me ei saa enne edasi minna, kui..."
+      "prompt": "Viimase aja k\u00f5ige p\u00f5letavamad k\u00fcsimused on..."
     },
     {
       "answers": [
-        "Alati \u00f5igustatud",
-        "Mitte kunagi \u00f5igustatud",
-        "T\u00f5de on kusagil vahepeal",
-        "Kas ma saaksin vihje?",
-        "Laske klounid lavale!"
+        "Avaldada erakondade s\u00fc\u00fcdimatuid promotekste",
+        "Valida valimisv\u00f5itluses pooli",
+        "N\u00f5uda t\u00e4isnime all kommenteerimist",
+        "\u00dcksteisega s\u00f5jajalal olla",
+        "P\u00fc\u00fcda otsustada \u00e4ra Riigikokku p\u00e4\u00e4sejaid enne valimistulemuste selgumist"
       ],
       "correct": {
-        "index": 4,
         "text": "Sa oled t\u00f5eline poliitikaguru, tibuke!"
       },
       "number": 3,
-      "prompt": "J\u00f5uv\u00f5tted ja populism on poliitikas..."
+      "prompt": "Meediav\u00e4ljaanded ei tohiks..."
     }
   ],
   "title": "Vasta neile k\u00fcsimustele ja meie kompass aitab Sul navigeerida Riigikogu valimistel!",

@@ -94,14 +94,14 @@ html, body {
 }
 
 .quiz-title {
-  font-size: 3.5em;
+  font-size: 3em;
   font-weight: 300;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .results-ratio {
-  margin: 20px auto;
+  margin: 0 auto .5em auto;
   font-size: 24px;
   font-weight: bold;
 }
