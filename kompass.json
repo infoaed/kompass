@@ -4,12 +4,14 @@
       "answers": [
         "Eesti elu edendav",
         "V\u00e4\u00e4rtusp\u00f5hine",
-        "Rahast s\u00f5ltumatu",
         "Erakondlike liivkastim\u00e4ngudeta",
-        "Kodanike vahetut osalust v\u00f5imaldav"
+        "Korruptsioonivaba",
+        "Kodanike vahetut osalust v\u00f5imaldav",
+        "K\u00f5ik on v\u00e4ga h\u00e4sti!"
       ],
       "correct": {
-        "text": "\u00dcks-kaks-kolm!"
+        "index": 5,
+        "text": "Pole vaja n\u00e4rvi minna, sest poliitika ongi siuke... Veidi imelik. Kui sulle hakkab tunduma, et poliitika on t\u00e4iesti aus ja \u00f5iglane ning poliitikud t\u00e4iesti normaalsed inimesed, siis oleks p\u00f5hjust hakata kahtlustama vanden\u00f5u. Seniks aga \u2014 meenutades tuntud lastelaulu \u2014 k\u00f5ik on v\u00e4ga h\u00e4sti, \u00fcks-kaks-kolm!"
       },
       "number": 1,
       "prompt": "Minu soov on, et poliitika oleks..."
@@ -23,24 +25,26 @@
         "Eesti metsade ja keskkonna s\u00e4ilimine"
       ],
       "correct": {
-        "text": "K\u00f5ik on v\u00e4ga h\u00e4sti!"
+        "index": 4,
+        "text": "Nagu sa vist juba oled hakanud kahtlustama, siis sinu ees on t\u00f5epoolest mitte tavaline, vaid v\u00f5lukompass, mis teab t\u00f5de ja oskab ka valijat selle poole suunata. Sest \u2014 olgem ausad! \u2014 kemplemine baarileti \u00e4\u00e4res ei kao kuhugi, ainult teemad vahelduvad: ent eksivad need, kelle meelest metsade, soode ja \u00fcldse keskkonna s\u00e4ilimine on <i>v\u00f5\u00f5ras mure</i>... Muide, ka Internet on omamoodi \u00f6kos\u00fcsteem!"
       },
       "number": 2,
       "prompt": "Viimase aja k\u00f5ige p\u00f5letavamad k\u00fcsimused on..."
     },
     {
       "answers": [
-        "Avaldada erakondade s\u00fc\u00fcdimatuid promotekste",
-        "Valida valimisv\u00f5itluses pooli",
-        "N\u00f5uda t\u00e4isnime all kommenteerimist",
-        "\u00dcksteisega s\u00f5jajalal olla",
-        "P\u00fc\u00fcda otsustada \u00e4ra Riigikokku p\u00e4\u00e4sejaid enne valimistulemuste selgumist"
+        "Varro Vooglaid ja Markus J\u00e4rvi on saanud endale ETVs isikliku huumorisaate",
+        "Daniel Vaarik on v\u00f5tnud vastutuse Eesti poliitika tuksikeeramise eest",
+        "Yana Toom on saanud oma Redditi AMA sessiooni EL autori\u00f5iguse ja tsensuurimasinate teemal",
+        "Vapsid on rehabiliteeritud ja pronkss\u00f5dur Aljo\u0161a on kolitud tagasi oma kohale Toompeal",
+        "Ajakirjanikud on \u00f5ppinud h\u00e4\u00e4ldama tulevase peaministri Z\u00fcleyxa Izmailova nime"
       ],
       "correct": {
-        "text": "Sa oled t\u00f5eline poliitikaguru, tibuke!"
+        "index": 4,
+        "text": "Meil k\u00f5igil on varje minevikust, aga mis t\u00f5i meid siia, ei vii meid edasi... Maailm muutub ja ka rohi muutub \u00fcha rohelisemaks, selles pole kahtlust \u2014 \u00e4rgem siis hoidkem olulisi muutusi kinni oma isikliku kitsarinnalisusega!"
       },
       "number": 3,
-      "prompt": "Meediav\u00e4ljaanded ei tohiks..."
+      "prompt": "Me ei saa minna edasi enne, kui..."
     }
   ],
   "title": "Vasta neile k\u00fcsimustele ja meie kompass aitab Sul navigeerida Riigikogu valimistel!",

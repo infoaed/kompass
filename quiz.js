@@ -176,8 +176,8 @@ var $indicators = $('<ol>')
       // answer dialogue
       if (correct) {
         opts = $.extend(opts, {
-          title: "Väga hea!",
-          text: "Asjatundjate enamus on sinuga samal seisukohal." + (
+          title: "Suurepärane suunataju!",
+          text: (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
               question.correct.text +
@@ -187,18 +187,11 @@ var $indicators = $('<ol>')
         });
       } else {
         opts = $.extend(opts, {
-          title: "Oi-oi!",
-          text: (
-            "See läks nüüd vähe mööda!<br/><br/>" +
-            "Võidugraafikus oleks sind hoidnud \"" +
-            question.answers[question.correct.index] + "\"." + (
-            question.correct.text ?
-            ("<div class=\"correct-text\">" +
+          title: "Ära lase end eksitada!",
+          text: "<div class=\"correct-text\">" +
               question.correct.text +
-              "</div>"
-            ) : "")
-            ),
-          type: "error"
+              "</div>",
+          type: "info"
         });
       }
 
@@ -211,7 +204,7 @@ var $indicators = $('<ol>')
       // using specified sweet alert options
       ans_btn.on('click', function() {
 
-        //function next() {
+        function next() {
           // if correct answer is selected,
           // keep track in total
           if (correct) state.correct++;
@@ -248,13 +241,13 @@ var $indicators = $('<ol>')
               .addClass('dark');
           }
           // unbind event handler
-          //$('.sweet-overlay').off('click', next);
-        //}
+          $('.sweet-overlay').off('click', next);
+        }
 
         // advance to next question on OK click or
         // click of overlay
-        //swal(opts, next);
-        //$('.sweet-overlay').on('click', next);
+        swal(opts, next);
+        $('.sweet-overlay').on('click', next);
 
       });
 
@@ -301,10 +294,11 @@ var $indicators = $('<ol>')
 
   $("<button>")
     .attr('class', 'quiz-button btn')
-    .text("Proovi uuesti!")
+    .text("Loe täpsemalt siit!")
     .click(function() {
-      state.correct = 0;
-      $quiz.carousel(0);
+      window.location.href = "http://piraadipartei.ee/kes-kardab-zuzut";
+      //state.correct = 0;
+      //$quiz.carousel(0);
     })
     .appendTo($restart_button);
 
@@ -354,7 +348,7 @@ function resultsText(state) {
 function tweet(state, opts) {
 
   var body = (
-    "Ei tea, keda valida? Vaata, mida soovitab sulle valimiskompass, mille on koostanud @halbkodanik koostöös sõltumatu poliitikauuringute instituudiga! " + opts.url + " #valimised #rk2019"
+    "Ei tea, keda valida? Vaata, mida soovitab sulle korrigeeritud kompass! " + opts.url + " #valimised #rk2019 #aiateibad"
   );
 
   return (
@@ -437,7 +431,7 @@ function result_viz() {
                              .duration(300)
                              .ease(easeFunc);
 
-        $("#res-text").html(["Meie andmed näitavad, et", "Sa oled liiga arukas", "et minna valima", "aga", "kui Sa muidu ei saa, siis", "vali mõni erakondadest", "mida teised kompassid", "õigustamatult eiravad", "&nbsp;", "Eestimaa Rohelised", "Elurikkuse Erakond", "Ühendatud Vasakpartei", "Vabaerakond", "mõni üksikkandidaat?", "&nbsp;"][iter++%15]);
+        $("#res-text").html(["Valimistulemus selgub", "100% juhtudest", "alles valimispäeval", "&nbsp;", "Viimase aasta jooksul", "on kaks valitsuserakonda", "käinud 5% künnise piiril", "&nbsp;", "Erakondliku eelistuseta", "on 21% valijatest", "&nbsp;", "Ära usu vildakaid kompasse!", "&nbsp;", "Informeeri ennast ise", "ja usalda oma südant!", "&nbsp;"][iter++%16]);
     }
 
     svg.selectAll('path')
