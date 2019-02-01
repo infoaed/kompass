@@ -2,8 +2,9 @@
 
 Põhineb koodil:
 
-* https://github.com/UrbanInstitute/quick-quiz (küsitlus)
-* https://github.com/xuchen81/xuchen-81/ (viskev D3 andmegraafik)
+* https://github.com/UrbanInstitute/quick-quiz (küsitlus, litsents teadmata)
+** https://github.com/t4t5/sweetalert (popup teek, osa quizist, MIT litsents)
+* https://github.com/xuchen81/xuchen-81/ (viskev D3 andmegraafik, BSD litsents)
 
 Seletus:
 
