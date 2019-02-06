@@ -11,7 +11,7 @@
       ],
       "correct": {
         "index": 5,
-        "text": "Pole vaja n\u00e4rvi minna, sest poliitika ongi siuke... veidi imelik. Kui Sulle hakkab tunduma, et poliitika on t\u00e4iesti aus ja \u00f5iglane ning poliitikud t\u00e4iesti normaalsed inimesed, siis oleks p\u00f5hjust hakata kahtlustama vanden\u00f5u. Seniks aga \u2014 meenutades tuntud lastelaulu \u2014 k\u00f5ik on v\u00e4ga h\u00e4sti, \u00fcks-kaks-kolm!"
+        "text": "Pole vaja n\u00e4rvi minna, sest poliitika ongi siuke... veidi imelik. Kui Sulle hakkab tunduma, et poliitika on aus ja \u00f5iglane ning poliitikud normaalsed inimesed, siis oleks p\u00f5hjust hakata kahtlustama vanden\u00f5u. Seniks aga \u2014 meenutades tuntud lastelaulu \u2014 k\u00f5ik on v\u00e4ga h\u00e4sti, \u00fcks-kaks-kolm!"
       },
       "number": 1,
       "prompt": "Minu soov on, et poliitika oleks..."
@@ -26,7 +26,7 @@
       ],
       "correct": {
         "index": 4,
-        "text": "Nagu vist juba kahtustad, pole su ees t\u00f5epoolest mitte tavaline, vaid v\u00f5lukompass, mis teab t\u00f5de ja oskab ka valijat selle poole suunata. Sest \u2014 olgem ausad! \u2014 kemplemine baarileti \u00e4\u00e4res ei kao kuhugi, ainult teemad vahelduvad: ent eksivad need, kelle meelest metsade, soode ja \u00fcldse keskkonna s\u00e4ilimine on <i>v\u00f5\u00f5ras mure</i>... Muide, ka Internet on omamoodi \u00f6kos\u00fcsteem!"
+        "text": "Nagu vist juba kahtustad, pole su ees t\u00f5epoolest mitte tavaline, vaid v\u00f5lukompass, mis teab t\u00f5de ja oskab ka valijat selle poole suunata. Sest \u2014 olgem ausad! \u2014 kemplemine baarileti \u00e4\u00e4res ei kao kuhugi, ainult teemad vahelduvad: ent eksivad need, kelle meelest metsade, soode ja \u00fcldse keskkonna s\u00e4ilimine on V\u00f5\u00f5ras Mure... Muide, ka Internet on omamoodi \u00f6kos\u00fcsteem!"
       },
       "number": 2,
       "prompt": "Viimase aja k\u00f5ige p\u00f5letavamad k\u00fcsimused on..."
@@ -35,7 +35,7 @@
       "answers": [
         "Vooglaid ja J\u00e4rvi on saanud endale ETVs isikliku huumorisaate",
         "Daniel Vaarik on v\u00f5tnud vastutuse Eesti poliitika tuksikeeramise eest",
-        "Yana Toom on saanud oma Redditi AMA autori\u00f5iguse ja tsensuurimasinate teemal",
+        "Yana Toom on saanud oma Redditi AMA autori\u00f5igusest ja tsensuurimasinatest",
         "Vapsid on rehabiliteeritud ja pronkss\u00f5dur on kolitud tagasi oma kohale Toompeal",
         "Ajakirjanikud on \u00f5ppinud h\u00e4\u00e4ldama tulevase peaministri Z\u00fcleyxa Izmailova nime"
       ],

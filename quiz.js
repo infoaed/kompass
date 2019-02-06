@@ -296,7 +296,7 @@ var $indicators = $('<ol>')
     .attr('class', 'quiz-button btn')
     .text("Loe täpsemalt siit!")
     .click(function() {
-      window.location.href = "http://piraadipartei.ee/kes-kardab-zuzut";
+      window.location.href = "http://piraadipartei.ee/kompassid";
       //state.correct = 0;
       //$quiz.carousel(0);
     })
